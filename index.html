@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Relatório de Fiscalização – Simples</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>RELATÓRIO DE FISCALIZAÇÃO</h1>
+  </header>
+
+  <main>
+    <form id="form-relatorio" class="container">
+      <section class="grid">
+        <label>Local
+          <input id="local" name="local" type="text" placeholder="Digite o local" />
+        </label>
+        <label>Relatório nº
+          <input id="numero" name="numero" type="text" placeholder="Ex.: DMFP0001/2025" />
+        </label>
+        <label>Data
+          <input id="data" name="data" type="date" />
+        </label>
+        <label>Órgãos envolvidos
+          <input id="orgaos" name="orgaos" type="text" placeholder="Ex.: Postura, PM, DMTU..." />
+        </label>
+        <label>Solicitante
+          <input id="solicitante" name="solicitante" type="text" />
+        </label>
+        <label class="span-2">Referência / Assunto
+          <input id="assunto" name="assunto" type="text" />
+        </label>
+      </section>
+
+      <section>
+        <h2>RELATÓRIO DE FISCALIZAÇÃO</h2>
+        <textarea id="relatorio" name="relatorio" rows="8" placeholder="Descreva os fatos observados..."></textarea>
+      </section>
+
+      <section>
+        <h2>AMPARO LEGAL</h2>
+        <textarea id="amparo" name="amparo" rows="6" placeholder="Liste os artigos e leis aplicáveis..."></textarea>
+      </section>
+
+      <section>
+        <h2>RELATÓRIO FOTOGRÁFICO</h2>
+        <div class="uploader">
+          <input id="fotos" type="file" accept="image/*" multiple>
+          <small>Selecione imagens (máx. 12). Cada imagem pode receber uma legenda.</small>
+        </div>
+        <div id="galeria"></div>
+      </section>
+
+      <section>
+        <h2>DISPOSITIVOS FINAIS</h2>
+        <textarea id="dispositivos" name="dispositivos" rows="6" placeholder="Providências, prazos, recomendações, ciência das partes..."></textarea>
+      </section>
+
+      <section>
+        <h2>ASSINATURA</h2>
+        <div id="assinaturas" class="grid">
+          <div class="span-2" style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px;">
+            <div class="assinatura">
+              <input type="text" placeholder="Nome do responsável" class="nome-responsavel">
+              <input type="text" placeholder="Cargo" class="cargo-responsavel">
+            </div>
+            <div class="assinatura">
+              <input type="text" placeholder="Nome do responsável" class="nome-responsavel">
+              <input type="text" placeholder="Cargo" class="cargo-responsavel">
+            </div>
+          </div>
+        </div>
+      </section>
+    </form>
+
+    <div class="acoes">
+      <button id="btn-gerar">Gerar PDF</button>
+    </div>
+
+    <footer>
+      <small>App simples – sem cache e sem service worker</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
